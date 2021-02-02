@@ -2,6 +2,7 @@
   <div>
     <h1 class="subtitle">Home Page</h1>
     <span class="display-4">hell</span>
+    <span class="fa fa-car"></span>
   </div>
 </template>
 
