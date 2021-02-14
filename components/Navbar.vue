@@ -7,6 +7,10 @@
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon>
+            <h3 style="color:green">1</h3>
+          <v-icon>mdi-cart</v-icon>
+        </v-btn>
+        <v-btn icon>
           <v-icon>mdi-magnify</v-icon>
         </v-btn>
       </v-app-bar>
@@ -19,7 +23,7 @@
             <v-img src="https://randomuser.me/api/portraits/men/11.jpg"></v-img>
           </v-list-item-avatar>
 
-          <v-list-item-title>John Doe</v-list-item-title>
+          <v-list-item-title style="margin-right:20px">John Doe</v-list-item-title>
         </v-list-item>
         <v-list-item
           v-for="item in navbarlist"
@@ -27,9 +31,9 @@
           :to="item.route"
         >
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon >{{ item.icon }}</v-icon>
           </v-list-item-icon>
-          <v-list-item-content>{{ item.text }}</v-list-item-content>
+          <v-list-item-content class="text-margin">{{ item.text }}</v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -40,11 +44,18 @@
 export default {
   data: () => ({
     navbarlist: [
-      { icon: 'mdi-view-dashboard', text: 'Dashboard', route: '/' },
-      { icon: 'mdi-upload', text: 'Upload', route: '/upload' },
+      { icon: 'mdi-home', text: 'خانه', route: '/' },
+      { icon: 'fa-graduation-cap', text: 'دانش آموزان', route: '/students' },
+      { icon: 'fa-users', text: 'کاربران', route: '/users' },
+      { icon: 'mdi-shopping', text: 'محصولات', route: '/products' },
+      { icon: 'mdi-shopping', text: 'شرکت ها', route: '/companies' },
     ],
   }),
 }
 </script>
 
-<style></style>
+<style>
+.text-margin{
+  margin-right:20px;
+}
+</style>

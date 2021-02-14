@@ -19,7 +19,8 @@ export default {
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'vuetify/dist/vuetify.min.css',
-    'vuetify-rtl-style/dist/css/vuetify-rtl-style.min.css'
+    'vuetify-rtl-style/dist/css/vuetify-rtl-style.min.css',
+    './assets/style/loading.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
