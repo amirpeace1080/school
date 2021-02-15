@@ -3,7 +3,7 @@
     <v-toolbar>
       <v-app-bar app clipped-leftS flat>
         <v-toolbar-title>
-          <h4>به مدرسه آنلاین خوش آمدید</h4>
+          <h5>به مدرسه آنلاین خوش آمدید</h5>
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <v-btn icon>

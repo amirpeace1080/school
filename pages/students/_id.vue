@@ -51,7 +51,7 @@
           </v-col>
 
           <v-col cols="6">
-            <p>{{ this.$store.state.studenItem.id }}</p>
+            <p class="id-overflow">{{ this.$store.state.studenItem.id }}</p>
             <p>{{ this.$store.state.studenItem.name }}</p>
             <p>{{ this.$store.state.studenItem.lastName }}</p>
             <p>{{ this.$store.state.studenItem.gender }}</p>
@@ -95,4 +95,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.id-overflow{
+  height:10%;
+  overflow: hidden;
+}
+</style>

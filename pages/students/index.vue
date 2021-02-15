@@ -1,12 +1,12 @@
 <template>
-  <div>
+  <div class="mb-5">
       <!-- start loading  -->
       <div class="loader" v-if="loading">Loading...</div>
       <!-- end loading -->
 
       <h2 class="d-flex justify-center mb-5">لیست دانش آموزان سال تحصیلی 1400 1401</h2>
 
-    <v-app id="app" class="mt-5">
+    <v-card id="app" class="mt-5">
       <v-container class="mt-5">
         <v-layout>
           <v-row>
@@ -44,7 +44,7 @@
           </v-row>
         </v-layout>
       </v-container>
-    </v-app>
+    </v-card>
   </div>
 </template>
 
