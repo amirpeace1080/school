@@ -61,10 +61,10 @@
                       <span class="fa fa-cog" style="color: #757575"></span>
                       <span class="subtitle-2" style="color: #757575"> تنظیمات کاربر </span>
                     </nuxt-link>
-                    <nuxt-link to="" class="mr-5">
+                    <button @click="delete_user" class="mr-5">
                       <v-icon style="color:#DD2C00" dense>mdi-delete</v-icon>
                       <span class="subtitle-2" style="color:#DD2C00">حذف کاربر</span>
-                    </nuxt-link>
+                    </button>
                   </v-row>
                 </v-container>
               </v-card-title>
@@ -92,6 +92,28 @@ export default {
       this.loading = false
       resp.data
     })
+  },
+  methods: {
+    delete_user(){
+      this.$swal.fire({
+  title: 'آیا حذف شود؟',
+  text: "در صورت حذف دیگر قابل بازیافت نیست",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  cancelButtonText: 'نه فعلا',
+  confirmButtonText: 'بله، حذف شود!'
+}).then((result) => {
+  if (result.isConfirmed) {
+    this.$swal.fire(
+      'Deleted!',
+      'Your file has been deleted.',
+      'success'
+    )
+  }
+})
+    }
   },
 }
 </script>

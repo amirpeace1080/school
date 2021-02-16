@@ -84,7 +84,7 @@ export default {
       .dispatch('getStudentItem', { id: this.$route.params.id })
       .then((resp) => {
         this.loading = false
-        resp.data
+        // resp.data
       })
   },
   methods: {
