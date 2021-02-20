@@ -48,7 +48,7 @@ export default {
       { icon: 'fa-graduation-cap', text: 'دانش آموزان', route: '/students' },
       { icon: 'fa-users', text: 'کاربران', route: '/users' },
       { icon: 'mdi-shopping', text: 'محصولات', route: '/products' },
-      { icon: 'mdi-shopping', text: 'شرکت ها', route: '/companies' },
+      { icon: 'mdi-truck', text: 'وسایل نقلیه', route: '/vehicles' },
     ],
   }),
 }

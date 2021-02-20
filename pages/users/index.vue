@@ -57,9 +57,9 @@
                     </v-flex>
                   </v-row>
                   <v-row>
-                    <nuxt-link to="">
+                    <nuxt-link :to="{path: `/users/${user.id}`}">
                       <span class="fa fa-cog" style="color: #757575"></span>
-                      <span class="subtitle-2" style="color: #757575"> تنظیمات کاربر </span>
+                      <span class="subtitle-2 setting-user"> تنظیمات کاربر </span>
                     </nuxt-link>
                     <button @click="delete_user" class="mr-5">
                       <v-icon style="color:#DD2C00" dense>mdi-delete</v-icon>
@@ -119,6 +119,14 @@ export default {
 </script>
 
 <style>
+.setting-user{
+color: #757575
+}
+
+.setting-user:hover{
+  color:blue
+}
+
 .form-search{
   position: absolute;
   left: 100px;

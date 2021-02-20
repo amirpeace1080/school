@@ -5,24 +5,40 @@ export default () =>{
     return new Vuex.Store({
         state: {
             students: [],
-            studenItem: [],
-            users: []
+            studentItem: [],
+            users: [],
+            userItem: [],
+            products: [],
+            productItem: [],
+            vehicle: []
         },
         mutations: {
             SET_STUDENT(state, students){
                 state.students = students
             },
             SET_STUDENTITEM(state, studentItem){
-                state.studenItem = studentItem
+                state.studentItem = studentItem
             },
             SET_USER(state, users){
                 state.users = users
+            },
+            SET_USERITEM(state, userItem){
+                state.userItem = userItem
+            },
+            SET_PRODUCT(state, products){
+                state.products = products
+            },
+            SET_PRODUCTITEM(state, productItem){
+                state.productItem = productItem
+            },
+            SET_VEHICLE(state, vehicle){
+                state.vehicle = vehicle
             }
         },
         actions: {
             getStudent({commit}){
                 return new Promise((resolve, reject) =>{
-                    this.$axios.get('https://14a5c6ab-5878-4d1b-a1a5-1c3e8876d94d.mock.pstmn.io/?us=pas')
+                    this.$axios.get('https://faker-products.herokuapp.com/students')
                     .then((resp)=>{
                         commit("SET_STUDENT", resp.data)
                         resolve()
@@ -34,7 +50,7 @@ export default () =>{
             },
             getStudentItem({commit}, {id}){
                 return new Promise((resolve, reject)=>{
-                    this.$axios.get(`https://14a5c6ab-5878-4d1b-a1a5-1c3e8876d94d.mock.pstmn.io/?us=pas/${id}`)
+                    this.$axios.get(`https://faker-products.herokuapp.com/students/${id}`)
                     .then((resp)=>{
                         commit("SET_STUDENTITEM", resp.data)
                         resolve()
@@ -46,13 +62,63 @@ export default () =>{
             },
             getUsers({commit}){
                 return new Promise((resolve, reject) =>{
-                    this.$axios.get('https://ab90ce5e-f5ac-4cf7-805e-54becaa0c516.mock.pstmn.io/?usr=pas')
+                    this.$axios.get('https://faker-products.herokuapp.com/users')
                     .then((resp) =>{
                         commit("SET_USER", resp.data)
                         resolve()
                     })
                     .catch((err)=>{
                         console.log(err, statusUser);
+                    })
+                })
+            },
+            getUserItem({commit}, {id}){
+                return new Promise((resolve, reject) =>{
+                    this.$axios.get(`https://faker-products.herokuapp.com/users/${id}`)
+                    .then((resp) =>{
+                        commit("SET_USERITEM", resp.data)
+                        resolve()
+                    })
+                    .catch((err)=>{
+                        console.log(err, statusUserItem);
+                    })
+                })
+            },
+
+            getProducts({commit}){
+                return new Promise((resolve, reject) =>{
+                    this.$axios.get('https://faker-products.herokuapp.com/products')
+                    .then((resp) =>{
+                        commit("SET_PRODUCT", resp.data)
+                        resolve()
+                    })
+                    .catch((err) =>{
+                        console.log(err, statusProducts);
+                    })
+                })
+            },
+            getProductItems({commit}, {id}){
+                return new Promise((resolve, reject) =>{
+                    this.$axios.get(`https://faker-products.herokuapp.com/products/${id}`)
+                    .then((resp) =>{
+                        commit("SET_PRODUCTITEM", resp.data)
+                        resolve()
+                    })
+                    .catch((err)=>{
+                        console.log(err, statusProductItem)
+                    })
+                })
+            },
+
+            getVehicles({commit}){
+                return new Promise((resolve, reject) =>{
+                    this.$axios.get('https://faker-products.herokuapp.com/vehicles')
+                    .then((resp) =>{
+                        commit("SET_VEHICLE", resp.data)
+                        resolve()
+                    })
+                    .catch((err)=>{
+                        console.log(err, statusVehicle);
                     })
                 })
             }

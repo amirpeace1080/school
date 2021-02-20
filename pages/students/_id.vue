@@ -31,8 +31,8 @@
       </div>
 
       <v-card-title class="d-flex justify-center">
-        {{ this.$store.state.studenItem.name }}
-        {{ this.$store.state.studenItem.lastName }}
+        {{ this.$store.state.studentItem.name }}
+        {{ this.$store.state.studentItem.lastName }}
       </v-card-title>
 
       <v-divider class="mx-4"></v-divider>
@@ -51,13 +51,13 @@
           </v-col>
 
           <v-col cols="6">
-            <p class="id-overflow">{{ this.$store.state.studenItem.id }}</p>
-            <p>{{ this.$store.state.studenItem.name }}</p>
-            <p>{{ this.$store.state.studenItem.lastName }}</p>
-            <p>{{ this.$store.state.studenItem.gender }}</p>
-            <p>{{ this.$store.state.studenItem.phone }}</p>
-            <p>{{ this.$store.state.studenItem.rol }}</p>
-            <p>{{ this.$store.state.studenItem.course }}</p>
+            <p class="id-overflow">{{ this.$store.state.studentItem.id }}</p>
+            <p>{{ this.$store.state.studentItem.name }}</p>
+            <p>{{ this.$store.state.studentItem.lastName }}</p>
+            <p>{{ this.$store.state.studentItem.gender }}</p>
+            <p>{{ this.$store.state.studentItem.phone }}</p>
+            <p>{{ this.$store.state.studentItem.rol }}</p>
+            <p>{{ this.$store.state.studentItem.course }}</p>
           </v-col>
         </v-row>
       </v-container>
@@ -89,7 +89,15 @@ export default {
   },
   methods: {
     print(){
-      alert('صفحه چاپ شد :)')
+      this.$swal.fire({
+  title: 'صفحه در حال چاپ است',
+  showClass: {
+    popup: 'animate__animated animate__fadeInDown'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__fadeOutUp'
+  }
+})
     }
   },
 }
