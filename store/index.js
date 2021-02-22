@@ -10,7 +10,10 @@ export default () =>{
             userItem: [],
             products: [],
             productItem: [],
-            vehicle: []
+            vehicle: [],
+            vehicleItem: [],
+            clients: [],
+            clientItem:{}
         },
         mutations: {
             SET_STUDENT(state, students){
@@ -33,6 +36,15 @@ export default () =>{
             },
             SET_VEHICLE(state, vehicle){
                 state.vehicle = vehicle
+            },
+            SET_VEHICLEITEM(state, vehicleItem){
+                state.vehicleItem = vehicleItem
+            },
+            SET_CLIENTS(state, clients){
+                state.clients = clients
+            },
+            SET_CLIENTITEM(state, clientItem){
+                state.clientItem = clientItem
             }
         },
         actions: {
@@ -119,6 +131,43 @@ export default () =>{
                     })
                     .catch((err)=>{
                         console.log(err, statusVehicle);
+                    })
+                })
+            },
+            getVehicleItem({commit}, {id}){
+                return new Promise((resolve, reject) =>{
+                    this.$axios.get(`https://faker-products.herokuapp.com/vehicles/${id}`)
+                    .then((resp) =>{
+                        commit("SET_VEHICLEITEM", resp.data)
+                        resolve()
+                    })
+                    .catch((err) =>{
+                        console.log(err, statusVehicleItem);
+                    })
+                })
+            },
+
+            getClients({commit}){
+                return new Promise((resolve, reject) =>{
+                    this.$axios.get('https://faker-products.herokuapp.com/clients')
+                    .then((resp) =>{
+                        commit("SET_CLIENTS", resp.data)
+                        resolve()
+                    })
+                    .catch((err) =>{
+                        console.log(err, statusClient);
+                    })
+                })
+            },
+            getClientItem({commit}, {id}){
+                return new Promise((resolve, reject) =>{
+                    this.$axios.get(`https://faker-products.herokuapp.com/clients/${id}`)
+                    .then((resp) =>{
+                        commit("SET_CLIENTITEM", resp.data)
+                        resolve()
+                    })
+                    .catch((err) =>{
+                        console.log(err, statusClientItem);
                     })
                 })
             }

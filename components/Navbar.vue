@@ -33,7 +33,7 @@
           <v-list-item-icon>
             <v-icon >{{ item.icon }}</v-icon>
           </v-list-item-icon>
-          <v-list-item-content class="text-margin">{{ item.text }}</v-list-item-content>
+          <v-list-item-content class="text-margin" style="font-weight:700">{{ item.text }}</v-list-item-content>
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
@@ -49,6 +49,7 @@ export default {
       { icon: 'fa-users', text: 'کاربران', route: '/users' },
       { icon: 'mdi-shopping', text: 'محصولات', route: '/products' },
       { icon: 'mdi-truck', text: 'وسایل نقلیه', route: '/vehicles' },
+      { icon: 'mdi-account-multiple-outline', text: 'مشتری ها', route: '/clients'}
     ],
   }),
 }
