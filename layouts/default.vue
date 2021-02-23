@@ -27,6 +27,9 @@ export default {
 </script>
 
 <style lang="scss">
+  html, body, div, v-app, v-main, v-container{
+    font-family: 'Vazir', sans-serif;
+  }
   a{
     text-decoration: none;
   }
