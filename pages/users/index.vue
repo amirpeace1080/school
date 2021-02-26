@@ -1,7 +1,15 @@
 <template>
   <div>
     <!-- start loading  -->
-    <div class="loader" v-if="loading">Loading...</div>
+    <div class="loader" v-if="loading">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
     <!-- end loading -->
 
     <!-- start top content -->

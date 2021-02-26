@@ -1,24 +1,36 @@
 <template>
   <div class="mb-5">
-      <!-- start loading  -->
-      <div class="loader" v-if="loading">Loading...</div>
-      <!-- end loading -->
+    <!-- start loading  -->
+    <div class="loader" v-if="loading">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <!-- end loading -->
 
-      <h2 class="d-flex justify-center mb-5">لیست دانش آموزان سال تحصیلی 1400 1401</h2>
+    <h2 class="d-flex justify-center mb-5">
+      لیست دانش آموزان سال تحصیلی 1400 1401
+    </h2>
 
     <v-card id="app" class="mt-5">
       <v-container class="mt-5">
         <v-layout>
           <v-row>
-            <v-flex xs12 sm6 lg4 v-for="(student, index) in this.$store.state.students" :key="index">
+            <v-flex
+              xs12
+              sm6
+              lg4
+              v-for="(student, index) in this.$store.state.students"
+              :key="index"
+            >
               <v-container>
                 <v-card hover elevation="8">
                   <v-card-media>
-                    <img
-                      :src="student.image"
-                      height="150px"
-                      width="100%"
-                    />
+                    <img :src="student.image" height="150px" width="100%" />
                   </v-card-media>
 
                   <v-card-title class="d-flex justify-center">
@@ -27,14 +39,14 @@
 
                   <v-card-text>
                     نام خانوادگی: {{ student.lastName }}<br />
-                    جنسیت : {{ student.gender}} <br />
+                    جنسیت : {{ student.gender }} <br />
                   </v-card-text>
 
                   <v-card-actions>
                     <!-- <v-btn icon><v-icon>mdi-bookmark</v-icon></v-btn> -->
                     <v-spacer></v-spacer>
                     <v-btn color="success" class="ml-1">ارسال پیام</v-btn>
-                    <nuxt-link :to="{path: `students/${student.id}`}">
+                    <nuxt-link :to="{ path: `students/${student.id}` }">
                       <v-btn flat color="primary">جزئیات</v-btn>
                     </nuxt-link>
                   </v-card-actions>
@@ -52,12 +64,12 @@
 export default {
   data() {
     return {
-      loading: false
+      loading: false,
     }
   },
   mounted() {
     this.loading = true
-    this.$store.dispatch('getStudent').then((resp)=>{
+    this.$store.dispatch('getStudent').then((resp) => {
       this.loading = false
       resp.data
     })
